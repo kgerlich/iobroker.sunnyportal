@@ -168,10 +168,19 @@ function homemanager(httpResponse) {
         }
         var obj = JSON.parse(body);
 
-        adapter.log.debug(obj);
-        adapter.log.info('Grid consumption: ' + obj.GridConsumption + ' (' + obj.Timestamp.DateTime + ')' );
+        if (!obj.TotalConsumption) {
+            adapter.log.debug('no data!');
+            return;
+        }
 
-        create_indicator('grid_consumption', 'total grid consumption', obj.GridConsumption);
+        adapter.log.debug(JSON.stringify(obj));
+        adapter.log.info('Total consumption: ' + obj.TotalConsumption + ' (' + obj.Timestamp.DateTime + ')' );
+
+        create_indicator('total_consumption', 'total consumption', obj.TotalConsumption);
+        create_indicator('grid_consumption', 'grid consumption', obj.GridConsumption);
+        create_indicator('self_consumption', 'self consumption', obj.SelfConsumption);
+        create_indicator('self_consumption_quote', 'self consumption quote', obj.SelfConsumptionQuote);
+        create_indicator('autarky_quote', 'autarky quote', obj.AutarkyQuote);
         create_indicator('last_update', 'time of last update', obj.Timestamp.DateTime);
     });
        
