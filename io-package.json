@@ -1,0 +1,60 @@
+{
+    "common": {
+        "name": "sunnyportal",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial adapter",
+                "de": "Initiale Version"
+            }
+        },
+		"title": "sunnyportal Adapter",
+        "titleLang": {
+            "en": "sunnyportal",
+            "de": "sunnyportal"
+        },
+        "desc": {
+            "en": "Adapter for sunnyportal devices",
+            "de": "Adapter für sunnyportal Geräte"
+        },
+        "authors": [
+            "Klaus Gerlicher <klaus@klausgerlicher.de>"
+        ],
+        "docs": {
+            "en": "docs/en/admin.md",
+            "de": "docs/de/admin.md"
+        },
+        "platform": "Javascript/Node.js",
+        "mode": "daemon",
+        "icon": "sunnyportal.png",
+        "materialize": true,
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/kgerlich/ioBroker.sunnyportal/master/admin/sunnyportal.png",
+        "keywords": ["sunnyportal", "power"],
+        "readme": "https://github.com/kgerlich/ioBroker.sunnyportal/blob/master/README.md",
+        "loglevel": "info",
+        "type": "energy",
+        "license": "MIT",
+        "messagebox": false
+    },
+    "native": {
+        "username": "zzz",
+        "password": "yyy",
+        "plantoid": "xxx",
+        "interval": "15"
+    },
+    "instanceObjects": [
+        {
+            "_id": "connected",
+            "type": "state",
+            "common": {
+                "name": "Info about connection to sunnyportal",
+                "type": "boolean",
+                "read":  true,
+                "write": false,
+				"role":  "indicator"
+            },
+            "native": {}
+        }
+    ]
+}

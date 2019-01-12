@@ -1,0 +1,63 @@
+{
+  "_from": "https://github.com/kgerlich/iobroker.sunnyportal/tarball/master",
+  "_id": "iobroker.sunnyportal@0.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-ZZLpjtUZ9kvlXmFlrvZ2qPilh+IGxnVDmUuzJi3yX8dK+LxsZaC07lrPD7GSixkOJLn42lPZ1ms7iaXWSeZeUg==",
+  "_location": "/iobroker.sunnyportal",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "remote",
+    "raw": "https://github.com/kgerlich/iobroker.sunnyportal/tarball/master",
+    "rawSpec": "https://github.com/kgerlich/iobroker.sunnyportal/tarball/master",
+    "saveSpec": "https://github.com/kgerlich/iobroker.sunnyportal/tarball/master",
+    "fetchSpec": "https://github.com/kgerlich/iobroker.sunnyportal/tarball/master"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://github.com/kgerlich/iobroker.sunnyportal/tarball/master",
+  "_shasum": "5b788a7004775230dbb1b6412f1fa3c765b1b789",
+  "_spec": "https://github.com/kgerlich/iobroker.sunnyportal/tarball/master",
+  "_where": "G:\\temp\\iobroker\\node_modules\\iobroker",
+  "author": {
+    "name": "Klaus Gerlicher",
+    "email": "klaus@klausgerlicher.de"
+  },
+  "bugs": {
+    "url": "https://github.com/kgerlich/iobroker.sunnyportal/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Klaus Gerlicher",
+      "email": "klaus@klausgerlicher.de"
+    }
+  ],
+  "dependencies": {
+    "pretty-ms": "^4.0.0",
+    "request": "^2.88.0"
+  },
+  "deprecated": false,
+  "description": "Adapter for sunnyportal",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "gulp": "^4.0.0",
+    "mocha": "^4.1.0"
+  },
+  "homepage": "https://github.com/kgerlich/iobroker.sunnyportal",
+  "keywords": [
+    "ioBroker",
+    "sunnyportal"
+  ],
+  "license": "MIT",
+  "main": "main.js",
+  "name": "iobroker.sunnyportal",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kgerlich/iobroker.sunnyportal.git"
+  },
+  "scripts": {
+    "test": "node node_modules/mocha/bin/mocha --exit"
+  },
+  "version": "0.0.1"
+}
