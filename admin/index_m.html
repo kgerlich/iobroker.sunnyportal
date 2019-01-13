@@ -15,6 +15,7 @@
 <script type="text/javascript" src="../../lib/js/materialize.js"></script>
 <script type="text/javascript" src="../../js/adapter-settings.js"></script>
 <script type="text/javascript" src="words.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
  <style>
   .m .col .select-wrapper+label {
    top: -26px;  
@@ -73,6 +74,11 @@
         callback(obj);
         window.location.reload();
     }
+    function validateEmail(email) {
+        var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return re.test(email);
+    }
+
 </script>
 </head>
 <body>
@@ -86,16 +92,42 @@
                     <img src="sunnyportal.png" class="logo">
                 </div>
             </div>
-            <div class="row">
+            <div id='vueapp' class="row">
                 <table>
-                    <tr><td class="translate">Username</td><td><input class="value" id="username"/></td></tr>
-                    <tr><td class="translate">Password</td><td><input class="value" type="password" id="password"/></td></tr>
-                    <tr><td class="translate">Plant OID</td><td><input class="value" id="plantoid"/></td></tr>
-                    <tr><td class="translate">Interval (>= 15)</td><td><input class="value" id="interval"/></td></tr>
+                    <tr><td class="translate">Username</td><td><input v-bind:style="{ 'background-color': username_bkgnd}" v-model="username" class="value" id="username"/></td></tr>
+                    <tr><td class="translate">Password</td><td><input v-model="password" class="value" type="password" id="password"/></td></tr>
+                    <tr><td class="translate">Plant OID</td><td><input v-model="plantoid" class="value" id="plantoid"/></td></tr>
+                    <tr><td class="translate">Interval (>= 15)</td><td><input v-model="interval" class="value" id="interval"/></td></tr>
                 </table>
             </div>
         </div>
     </div>
 </body>
-
+<script>
+    new Vue({
+        el: "#vueapp",
+        data: {
+            username: '',
+            password: '',
+            plantoid: '',
+            interval: 0,
+            username_bkgnd: ''
+        },
+        watch: {
+            username: function(val, oldVal) {
+                console.log(val, oldVal);
+                if (!validateEmail(val)) {
+                    console.log('invalid email address!');
+                    this.username_bkgnd = 'red';
+                } else {
+                    this.username_bkgnd = '';
+                }
+            }
+        },
+        created: function () {
+        },
+        beforeDestroy: function() {
+        },
+    })    
+</script>
 </html>
