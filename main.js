@@ -168,7 +168,7 @@ function homemanager(httpResponse) {
         create_indicator('last_update', 'time of last update', obj.Timestamp.DateTime);
 
         if (timer == 0) {
-            timer = setInterval(homemanager, (adapter.config.interval >= 15) ? adapter.config.interval * 1000 : 15*1000);
+            timer = setInterval(setup, (adapter.config.interval >= 15) ? adapter.config.interval * 1000 : 15*1000);
         }
     });
 }
