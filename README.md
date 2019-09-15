@@ -1,6 +1,6 @@
 ![Logo](admin/sunnyportal.png)
 # ioBroker.sunnyportal
-=================
+![Number of Installations](http://iobroker.live/badges/sunnyportal-installed.svg) ![Number of Installations](http://iobroker.live/badges/sunnyportal-stable.svg) =================
 
 This adapter connects a Sunnyportal.
 
